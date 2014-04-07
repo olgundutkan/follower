@@ -3,6 +3,8 @@
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 
+use Config;
+
 class FollowersServiceProvider extends ServiceProvider {
 
 	/**
@@ -21,7 +23,9 @@ class FollowersServiceProvider extends ServiceProvider {
 	{
 		$this->package('dutkan/followers');
 
-		AliasLoader::getInstance()->alias('Follower', 'Dutkan\Followers\Follower');
+		$driver = Config::get('follower::config.driver');
+
+		AliasLoader::getInstance()->alias('Follower', 'Dutkan\Followers\Laravel\Follower');
 	}
 
 	/**

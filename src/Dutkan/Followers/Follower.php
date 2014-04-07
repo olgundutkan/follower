@@ -1,16 +1,10 @@
 <?php namespace Dutkan\Followers;
 
-class Follower
+use Evenement\EventEmitterInterface;
+
+interface Follower
 {
-    public static function followTo($userId)
-    {        
-        return 'Follow To';
+    public static function followTo($userId);
 
-    }
-
-    public static function unfollowFrom($userId)
-    {
-        return 'UnFollow To';
-
-    }
+    public static function unfollowFrom($userId);
 }

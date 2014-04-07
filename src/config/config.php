@@ -2,7 +2,7 @@
 
 return array(
 
-'driver' => 'Sentry',
+'authentication' => 'Laravel',
 
 
 );

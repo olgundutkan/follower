@@ -23,9 +23,9 @@ class FollowersServiceProvider extends ServiceProvider {
 	{
 		$this->package('dutkan/followers');
 
-		$driver = Config::get('follower::config.driver');
+		$driver = Config::get('followers::config.authentication');
 
-		AliasLoader::getInstance()->alias('Follower', 'Dutkan\Followers\Laravel\Follower');
+		AliasLoader::getInstance()->alias('Follower', 'Dutkan\Followers\\'.$driver.'\Follower');
 	}
 
 	/**

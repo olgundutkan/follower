@@ -20,13 +20,22 @@ Once this operation completes, the final step is to add the service provider. Op
 
 	'Dutkan\Followers\FollowersServiceProvider'
 
+## Migrations
+You can installing the package' s migration file into your application, by running the follwing command:
+
+	php artisan migrate dutkan/followers
+
+## Create Model
 That's it! You're all set to go. Run the `artisan` command from the Terminal to see the new `follow:model` commands.
 
 	php artisan follow:model Follow
 
+## Configuration
+After installing, you can publish the package's configuration file into your application, by running the following command:
 
-"dutkan/followers": "dev-develop"
+	php artisan config:publish dutkan/followers
 
-'Dutkan\Followers\FollowersServiceProvider'
+This will publish the config file to app/config/packages/dutkan/followers/config.php where you modify the package configuration.
+
 
 $follow = Follower::followTo('User', $id);

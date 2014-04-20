@@ -49,7 +49,7 @@ To add the current user's followers
 		
 		} catch (Dutkan\Followers\Exceptions\AuthenticationException $e) {
 
-			dd($e->getMessage());
+			return $e->getMessage();
 			
 		}
 

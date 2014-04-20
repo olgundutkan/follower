@@ -1,7 +1,7 @@
 <?php namespace Dutkan\Followers\Sentry;
 
 use Dutkan\Followers\Follower as FollowerInterface;
-use Sentry;
+use Sentry, Follow;
 use Dutkan\Followers\Exceptions\AuthenticationException;
 
 class Follower implements FollowerInterface

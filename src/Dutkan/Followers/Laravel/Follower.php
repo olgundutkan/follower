@@ -1,7 +1,7 @@
 <?php namespace Dutkan\Followers\Laravel;
 
 use Dutkan\Followers\Follower as FollowerInterface;
-use Auth;
+use Auth, Follow;
 use Dutkan\Followers\Exceptions\AuthenticationException;
 
 class Follower implements FollowerInterface

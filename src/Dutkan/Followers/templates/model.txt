@@ -1,7 +1,10 @@
 <?php
 
 class $NAME$ extends \Eloquent {
+
 	protected $fillable = array();
+
+	protected $table = 'follower';
 
 	public function follower()
 	{

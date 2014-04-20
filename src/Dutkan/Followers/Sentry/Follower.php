@@ -9,6 +9,7 @@ class Follower implements FollowerInterface
     public static function followTo($userId)
     {        
         if (Sentry::check()) {
+
         	$currentUser = Sentry::getUser();
 
 	        $follow = new Follow();
@@ -29,11 +30,14 @@ class Follower implements FollowerInterface
     public static function unfollowFrom($userId)
     {
         if (Sentry::check()) {
+
         	$currentUser = Sentry::getUser();
 
-	        $follow = Follow::findOrFail($currentUser->id);
+	        $follow = Follow::where('user_id', $currentUser->id)->where('follower_id', $userId);
 
 	        $follow->delete();
+
+            return TRUE;
         }
 
         throw new AuthenticationException("Authentication Failed");

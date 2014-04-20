@@ -20,6 +20,11 @@ Once this operation completes, the final step is to add the service provider. Op
 
 	'Dutkan\Followers\FollowersServiceProvider'
 
+That's it! You're all set to go. Run the `artisan` command from the Terminal to see the new `follow:model` commands.
+
+	php artisan follow:model Follow
+
+
 "dutkan/followers": "dev-develop"
 
 'Dutkan\Followers\FollowersServiceProvider'

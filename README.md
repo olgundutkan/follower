@@ -1,4 +1,7 @@
 # Laravel 4 Basic Follower Package
+This Laravel 4 package provides a command. These generator include:
+
+`follow:model`
 
 ## Package Inslallation
 

@@ -41,6 +41,20 @@ This will publish the config file to app/config/packages/dutkan/followers/config
 
 	try {
 
+		$follow = Follower::followTo(1);
+
+		return Redirect::to('/');
+		
+		} catch (Dutkan\Followers\Exceptions\AuthenticationException $e) {
+
+			dd($e->getMessage());
+			
+		}
+
+or
+
+	try {
+
 		$follow = Follower::unfollowFrom(1);
 
 		return Redirect::to('/');

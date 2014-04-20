@@ -37,3 +37,16 @@ After installing, you can publish the package's configuration file into your app
 
 This will publish the config file to app/config/packages/dutkan/followers/config.php where you modify the package configuration.
 
+## Use
+
+	try {
+
+		$follow = Follower::unfollowFrom(1);
+
+		return Redirect::to('/');
+		
+		} catch (Dutkan\Followers\Exceptions\AuthenticationException $e) {
+
+			return $e->getMessage();
+			
+		}

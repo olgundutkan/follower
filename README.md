@@ -37,5 +37,3 @@ After installing, you can publish the package's configuration file into your app
 
 This will publish the config file to app/config/packages/dutkan/followers/config.php where you modify the package configuration.
 
-
-$follow = Follower::followTo('User', $id);

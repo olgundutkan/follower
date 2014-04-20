@@ -39,6 +39,8 @@ This will publish the config file to app/config/packages/dutkan/followers/config
 
 ## Use
 
+To add the current user's followers
+
 	try {
 
 		$follow = Follower::followTo(1);
@@ -51,7 +53,7 @@ This will publish the config file to app/config/packages/dutkan/followers/config
 			
 		}
 
-or
+or remove the current user's followers
 
 	try {
 

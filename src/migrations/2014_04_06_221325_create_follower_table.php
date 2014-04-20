@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration {
+class CreateFollowerTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('users_followers', function($table)
+		Schema::create('follower', function($table)
 		{
 		    $table->increments('id');
 		    $table->integer('user_id')->unsigned();
@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('users_followers');
+		Schema::dropIfExists('follower');
 	}
 
 }

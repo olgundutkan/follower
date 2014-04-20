@@ -1,0 +1,10 @@
+<?php
+
+class $NAME$ extends \Eloquent {
+	protected $fillable = array();
+
+	public function follower()
+	{
+		return $this->belongsToMany('User');
+	}
+}

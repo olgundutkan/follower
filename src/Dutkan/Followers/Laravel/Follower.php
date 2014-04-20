@@ -1,18 +1,42 @@
 <?php namespace Dutkan\Followers\Laravel;
 
 use Dutkan\Followers\Follower as FollowerInterface;
+use Auth;
+use Dutkan\Followers\Exceptions\AuthenticationException;
 
 class Follower implements FollowerInterface
 {
     public static function followTo($userId)
     {        
-        return 'Follow To Laravel';
+        if (Auth::check()) {
+        	$currentUser = Auth::user();
+
+	        $follow = new Follow();
+
+	        $follow->user_id = $currentUser->id;
+
+	        $follow->follower_id = $userId;
+
+	        $follow->save();
+
+	        return TRUE;
+        }
+
+        throw new AuthenticationException("Authentication Failed");        
 
     }
 
     public static function unfollowFrom($userId)
     {
-        return 'UnFollow To Laravel';
+        if (Auth::check()) {
+        	$currentUser = Auth::user();
+
+	        $follow = Follow::findOrFail($currentUser->id);
+
+	        $follow->delete();
+        }
+
+        throw new AuthenticationException("Authentication Failed");
 
     }
 }

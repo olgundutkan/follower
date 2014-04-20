@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
+use Dutkan\Followers\Commands\ModelGeneratorCommand;
 
 use Config;
 
@@ -35,10 +36,9 @@ class FollowersServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['follower'] = $this->app->share(function($app)
-        {
-            return new Follow;
-        });
+		$this->registerFollower();
+
+		$this->registerModel();
 	}
 
 	/**
@@ -50,5 +50,28 @@ class FollowersServiceProvider extends ServiceProvider {
 	{
 		return array('follower');
 	}
+
+	public function registerFollower()
+	{
+		$this->app['follower'] = $this->app->share(function($app)
+        {
+            return new Follow;
+        });
+	}
+
+	/**
+     * Register the model generator
+     */
+    protected function registerModel()
+    {
+        $this->app['generate.model'] = $this->app->share(function($app)
+        {
+            $generator = $this->app->make('Dutkan\Followers\Generator');
+
+            return new ModelGeneratorCommand($generator);
+        });
+
+        $this->commands('generate.model');
+    }
 
 }

@@ -23,7 +23,7 @@ Once this operation completes, the final step is to add the service provider. Op
 ## Migrations
 You can installing the package' s migration file into your application, by running the follwing command:
 
-	php artisan migrate dutkan/followers
+	php artisan migrate --package="dutkan/followers"
 
 ## Create Model
 That's it! You're all set to go. Run the `artisan` command from the Terminal to see the new `follow:model` commands.

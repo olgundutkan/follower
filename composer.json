@@ -19,5 +19,5 @@
             "Dutkan\\Followers\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
